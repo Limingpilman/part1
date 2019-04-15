@@ -1,0 +1,10 @@
+function moveMessage(){
+    var elem=document.getElementById("xx");
+    elem.style.left="200px";
+ }
+ function positionMessage(){
+    var elem=document.getElementById("xx");
+    elem.style.left="50px";
+    elem.style.top="100px";
+    movent=setTimeout("moveMessage()",5000);//5秒后执行moveMessage()函数
+ }

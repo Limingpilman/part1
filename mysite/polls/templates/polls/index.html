@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<link rel="stylesheet" href="{% static 'polls/snk.js' %}">
+{% if latest_question_list %}
+<a style="display: block;text-align:center;">投票网站</a>
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+    <!-- <div id="drawer"><canvas width="1350" height="521"></canvas></div> -->
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
